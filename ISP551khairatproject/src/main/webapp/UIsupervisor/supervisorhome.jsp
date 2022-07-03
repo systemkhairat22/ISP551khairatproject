@@ -15,9 +15,9 @@
             <img class="logo" alt="" src="img/KKS.jpg">
             <h3 style="text-align: center; color: rgb(2, 2, 2);">WELCOME</h3>
             <hr style="height:2px;border-width:0;color:BLACK;background-color:BLACK">
-            <a href="#" class="btn2" style="display:block;">HOME </a>
-            <a href="#" class="btn4" style="display:block;">CREATE NEW ADMIN</a>
-            <a href="#" class="btn5" style="display:block;">LIST OF ADMIN</a>
+            <a href="supervisorhome.jsp" class="btn2" style="display:block;">HOME </a>
+            <a href="createadmin.jsp" class="btn4" style="display:block;">CREATE NEW ADMIN</a>
+            <a href="adminlist.jsp" class="btn5" style="display:block;">LIST OF ADMIN</a>
             <hr style="height:2px;border-width:0;color:BLACK;background-color:BLACK">
             <a href="#" class="btn5" style="display:block;">LOGOUT</a>
 

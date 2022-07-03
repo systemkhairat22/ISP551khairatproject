@@ -1,0 +1,57 @@
+@charset "ISO-8859-1";
+body{
+	padding:0; 
+	margin:0;
+}
+
+.container{
+	 	height: 500px;
+        background-color: black;/* For browsers that do not support gradients */
+ 
+}
+.container-fluid{
+  margin-left: 12%;
+  font-family: 'Times New Roman', Times, serif;
+  
+  
+}
+a.btn1,a.btn2,a.btn3,a.btn4,a.btn5,a.btn6,a.btn7,a.btn8{
+	height:50px;
+	text-align: center;
+}
+
+
+
+a:link{
+  background-color: #0abcdb;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size:11px;
+  
+}
+a:hover, a:active {
+    background-color: rgb(247, 249, 250);
+  }
+  
+  a{
+    color: rgb(5, 5, 5);
+  }
+  
+  h5{
+    color:black;
+    font-size:16px;
+    padding-bottom:-5em;
+  }
+  
+  h1{
+      text-align:center;
+      padding-top:5px;
+  }
+  .logo{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width:70%;
+  	border-radius: 150px;
+}

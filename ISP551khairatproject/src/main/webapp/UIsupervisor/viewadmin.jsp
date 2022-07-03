@@ -27,6 +27,27 @@
         <div style=" background-color: #043a9f; height:100px; color:blue; padding-left:70px; ">
             <h1 style="text-align: center; color: rgb(2, 2, 2);">VIEW ADMIN</h1>
         </div>
+        
+         <!-- CONTENT -->
+        <div class="container-fluid">
+            <table class="table table-striped" style="width: 88%;">
+            	<thead>
+            		<tr>
+            			<th>ID</th>
+            			<th>Name</th>
+            			
+            		</tr>
+            			
+            	</thead>
+            	<tbody>
+            		
+            		
+            	</tbody>
+            
+            
+            </table>
+        </div>
+        
  		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
         <script src="main.js"></script>

@@ -5,40 +5,47 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+import khairatDB.ConnectionManager;
 import user.model.Admin;
 import user.model.Member;
 
 import static java.lang.System.out;
 
 public class AdminDAO {
-	String dbURL = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";
-    String user = "imguxthqgzxctp";
-    String pass = "65e0c20ac84dd080ed89ff71e0e75299aa31962e3aec8c49e4ec5216ad0f5eef";
+	static Connection con = null;
+	static PreparedStatement ps = null;
+	static Statement statement = null;
+	static ResultSet rs = null;
+	//String dbURL = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";
+    //String user = "imguxthqgzxctp";
+    //String pass = "65e0c20ac84dd080ed89ff71e0e75299aa31962e3aec8c49e4ec5216ad0f5eef";
     
     
     
     //connection to database
-    protected Connection getConnection() {
-        Connection con = null;
-        try {
-            Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection(dbURL, user, pass);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return con;
+    //protected Connection getConnection() {
+        //Connection con = null;
+        //try {
+            //Class.forName("org.postgresql.Driver");
+            //con = DriverManager.getConnection(dbURL, user, pass);
+        //} catch (SQLException e) {
+            //e.printStackTrace();
+        //} catch (ClassNotFoundException e) {
+            //e.printStackTrace();
+        //}
+        //return con;
 
-    }
+    //}
+    
+    
     //GET ADMIN BY ID
     public Admin getAdminById(int adminid) {
     	Admin a = new Admin();
     	try{
-    		Connection con = getConnection();
+    		con = ConnectionManager.getConnection();
     		PreparedStatement ps = con.prepareStatement("SELECT * FROM admin WHERE adminid=?");
     		ps.setInt(1, adminid);
     		ResultSet rs = ps.executeQuery();
@@ -61,7 +68,7 @@ public class AdminDAO {
     
     //UPDATE ADMIN
     public void updateAdmin(Admin admin) {
-    	int id = admin.getAdminid();
+    	//int id = admin.getAdminid();
     	String icnum = admin.getAdmin_icnum();
     	String name = admin.getAdd_name();
     	int age = admin.getAdd_age();
@@ -69,10 +76,10 @@ public class AdminDAO {
     	String password = admin.getAdd_password();
     	String phonenum = admin.getAdd_phonenum();
     	
-    	try (Connection con = getConnection();
-    		PreparedStatement ps = con.prepareStatement
-    		("UPDATE admin SET admin_icnum=?,add_name=?,add_age=?,add_email=?,add_password=?,add_phonenum=?");) 
+    	try
     		{
+    		con = ConnectionManager.getConnection();
+    		ps = con.prepareStatement("UPDATE admin SET admin_icnum=?,add_name=?,add_age=?,add_email=?,add_password=?,add_phonenum=?");
     		ps.setString(1, icnum);
     		ps.setString(2, name);
     		ps.setInt(3, age);
@@ -102,10 +109,10 @@ public class AdminDAO {
     	String repname = member.getRepresentative_icnum();
     	String repicnum = member.getRepresentative_icnum();
     	
-    	try(Connection con = getConnection();
-    		PreparedStatement ps = con.prepareStatement
-    				("INSERT INTO member(mem_name,mem_icnum,mem_age,mem_address,mem_email,mem_phonenum,mem_password,repname,repnnum) values(?,?,?,?,?,?,?,?,?)"))
+    	try
     	{
+    		con = ConnectionManager.getConnection();
+    		ps = con.prepareStatement("INSERT INTO member(mem_name,mem_icnum,mem_age,mem_address,mem_email,mem_phonenum,mem_password,repname,repnnum) values(?,?,?,?,?,?,?,?,?)");
     		ps.setString(1, name);
     		ps.setString(2,icnum);
     		ps.setInt(3, age);
@@ -127,16 +134,15 @@ public class AdminDAO {
     }
     
     //VIEW MEMBER LIST
-    public List<Member> getListMember(int memid){
+    public static List<Member> getListMember(){
     	
     	List<Member> member = new ArrayList<Member>();
     	
     	try {
     		//CONNECT TO DB
-    		Connection con = getConnection();
+    		con = ConnectionManager.getConnection();
     		//CREATE STATEMENT
     		PreparedStatement ps = con.prepareStatement("SELECT * FROM member WHERE memberid=?");
-    		ps.setInt(1, memid);
     		//EXECUTE QUERY
     		ResultSet rs = ps.executeQuery();
     		

@@ -1,0 +1,60 @@
+package user.model;
+
+public class Member {
+	private int memberid;
+	private String mem_icnum;
+	private String mem_name;
+	private int mem_age;
+	private String mem_address;
+	private String mem_email;
+	private String mem_phonenum;
+	private String mem_password;
+	private String representative_name;
+	private String representative_icnum;
+	
+	public Member() {
+		this.memberid = 0;
+		this.mem_icnum = null;
+		this.mem_name = null;
+		this.mem_age = 0;
+		this.mem_address = null;
+		this.mem_email = null;
+		this.mem_phonenum = null;
+		this.mem_password = null;
+		this.representative_name = null;
+		this.representative_icnum = null;
+	}
+	public Member(String mem_icnum, String mem_name, int mem_age, String mem_address,
+			String mem_email, String mem_phonenum,String mem_password, String representative_name, String representative_icnum) {
+		
+		this.mem_icnum = mem_icnum;
+		this.mem_name = mem_name;
+		this.mem_age = mem_age;
+		this.mem_address = mem_address;
+		this.mem_email = mem_email;
+		this.mem_phonenum = mem_phonenum;
+		this.mem_password = mem_password;
+		this.representative_name = representative_name;
+		this.representative_icnum = representative_icnum;
+	}
+	public int getMemberid() {return memberid;}
+	public void setMemberid(int memberid) {this.memberid = memberid;}
+	public String getMem_icnum() {return mem_icnum;}
+	public void setMem_icnum(String mem_icnum) {this.mem_icnum = mem_icnum;}
+	public String getMem_name() {return mem_name;}
+	public void setMem_name(String mem_name) {this.mem_name = mem_name;}
+	public int getMem_age() {return mem_age;}
+	public void setMem_age(int mem_age) {this.mem_age = mem_age;}
+	public String getMem_address() {return mem_address;}
+	public void setMem_address(String mem_address) {this.mem_address = mem_address;}
+	public String getMem_email() {return mem_email;}
+	public void setMem_email(String mem_email) {this.mem_email = mem_email;}
+	public String getMem_phonenum() {return mem_phonenum;}
+	public void setMem_phonenum(String mem_phonenum) {this.mem_phonenum = mem_phonenum;}
+	public String getRepresentative_name() {return representative_name;}
+	public void setRepresentative_name(String representative_name) {this.representative_name = representative_name;}
+	public String getRepresentative_icnum() {return representative_icnum;}
+	public void setRepresentative_icnum(String representative_icnum) {this.representative_icnum = representative_icnum;}
+	public String getMem_password() {return mem_password;}
+	public void setMem_password(String mem_password) {this.mem_password = mem_password;}
+}

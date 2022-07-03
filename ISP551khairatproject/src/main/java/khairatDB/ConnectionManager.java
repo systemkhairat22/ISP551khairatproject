@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class ConnectionManager {
 	static Connection con;
 	private static final String DB_DRIVER = "org.postgresql.Driver";
-	private static final String DB_CONNECTION = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";
+	private static final String DB_CONNECTION = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d8f75dvcudno1t";
 	private static final String DB_USER = "imguxthqgzxctp";
 	private static final String DB_PASSWORD = "65e0c20ac84dd080ed89ff71e0e75299aa31962e3aec8c49e4ec5216ad0f5eef";
 

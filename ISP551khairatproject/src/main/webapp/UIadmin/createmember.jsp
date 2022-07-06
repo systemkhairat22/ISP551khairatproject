@@ -55,8 +55,8 @@
 			</tbody>
 		</table>
 		
-		<input  type="submit" value= "submit" class="btn btn-outline-primary">
-        <input type="reset"  value = "reset" class="btn btn-outline-primary">
+		<input  type="submit" value= "submit">
+        <input type="reset"  value = "reset">
 	</form>
 </body>
 </html>

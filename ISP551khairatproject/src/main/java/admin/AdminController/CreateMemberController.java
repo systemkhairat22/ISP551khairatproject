@@ -31,7 +31,7 @@ public class CreateMemberController extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher view = request.getRequestDispatcher("UIadmin/createmember.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("createmember.jsp");
 		view.forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,7 +51,7 @@ public class CreateMemberController extends HttpServlet {
 		dao.addMember(member);
 		
 		request.setAttribute("member", AdminDAO.getListMember());
-		RequestDispatcher view = request.getRequestDispatcher("UIadmin/memberlist.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("memberlist.jsp");
 		view.forward(request, response);
 	}
 

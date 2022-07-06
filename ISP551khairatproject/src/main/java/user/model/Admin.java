@@ -9,6 +9,7 @@ public class Admin {
 	private String add_password;
 	private String add_phonenum;
 	private String supervisorid;
+	private boolean valid;
 	
 	public Admin() {
 		this.adminid = 0;
@@ -79,5 +80,11 @@ public class Admin {
 	}
 	public void setSupervisorid(String supervisorid) {
 		this.supervisorid = supervisorid;
+	}
+	public boolean isValid() {
+		return valid;
+	}
+	public void setValid(boolean valid) {
+		this.valid = valid;
 	}
 }

@@ -7,9 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import hostelmanagement.model.CollegeApplication;
+import khairat.model.ApplicationClaim;
 import khairatDB.ConnectionManager;
 import user.model.Admin;
 import user.model.Member;
+import user.model.Student;
 
 import static java.lang.System.out;
 
@@ -40,6 +44,41 @@ public class AdminDAO {
     //}
     
     
+	//LOGIN ADMIN
+	public static Admin loginStudent(Admin a) {
+		
+		int adminID = a.getAdminid();
+		String adminpass = a.getAdd_password();
+
+		try {
+			//CONNECT TO DB
+			con = ConnectionManager.getConnection();
+
+			//CREATE STATEMENT
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM admin WHERE adminid = ? AND add_password = ?");
+			ps.setInt(1, adminID);
+			ps.setString(2, adminpass);
+
+			//EXECUTE QUERY
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				a.setAdminid(rs.getInt("adminid"));
+				a.setValid(true);
+			}
+			else {
+				a.setValid(false);
+			}
+
+			//CLOSE CONNECTION
+			con.close();
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return a;
+	}
+	
+	
     //GET ADMIN BY ID
     public Admin getAdminById(int adminid) {
     	Admin a = new Admin();
@@ -165,4 +204,53 @@ public class AdminDAO {
 		}
     	return member;
     }
+    
+    //DELETE MEMBER
+    public void deleteMember(int memberid) {
+    	try {
+    		//CONNECT TO DB
+			con = ConnectionManager.getConnection();
+			
+			//CREATE STATEMENT
+			ps = con.prepareStatement("DELETE FROM member WHERE memberid=?");
+			ps.setInt(1, memberid);
+    	}catch(SQLException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    //GET ALL CLAIM APPLICATION 
+    public static List<ApplicationClaim> viewApplicationList() {
+
+		List<ApplicationClaim> applicationclaim = new ArrayList<ApplicationClaim>();
+
+		try {
+			//CONNECT TO DB
+			con = ConnectionManager.getConnection();
+
+			//CREATE STATEMENT
+			ps = con.prepareStatement("SELECT * FROM applicationclaim");
+
+			//EXECUTE QUERY
+			rs = ps.executeQuery();
+
+			while(rs.next()) {
+				ApplicationClaim appclaim = new ApplicationClaim();
+				appclaim.setApplicationid(rs.getInt("applicationid"));
+				appclaim.setDeathCert(rs.getString("deathcertificate"));
+				appclaim.setClaimStatus(rs.getString("appclaim_status"));
+				appclaim.setMemberid(rs.getInt("memberid"));
+				appclaim.setAdminid(rs.getInt("adminid"));
+				
+				applicationclaim.add(appclaim);
+			}
+
+			//CLOSE CONNECTION
+			con.close();
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return applicationclaim;
+	}
 }

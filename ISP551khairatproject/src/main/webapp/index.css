@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+body{
+	padding:0; 
+	margin:0;
+    background-color: black;
+}
+
+.container{
+	 	height: 500px;
+        background-color: black;/* For browsers that do not support gradients */
+        
+ 
+}
+h1{
+    text-align:center;
+    padding-top:5px;
+}
+p{
+    color: aliceblue;
+    text-align: center;
+}
+.container-fluid{
+    margin-top: 5%;
+}
+button{
+    background-color: blue;
+    padding: 15px 32px;
+    border-radius: 12px;
+}
+.button-left{
+    margin-left: 45%;
+}

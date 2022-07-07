@@ -22,7 +22,7 @@
         <p>area.The mosque needed RM 1 million to cover the cost of renovation on June</p>
         <p>3,2017 to make a capacity even larger about 5,000 people.The mosque became a</p>
         <p>center of worship for the community in Gelang Patah,Johor.</p>
-        <a href="#"><button class="button-left" >LOGIN</button></a>
+        <a href="login.jsp"><button class="button-left" >LOGIN</button></a>
 	</div>
 
   

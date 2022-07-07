@@ -160,10 +160,9 @@ public class AdminDAO {
     		ps.setString(7, password);
     		ps.setString(8, repname);
     		ps.setString(9, repicnum);
-    		
-    		out.println(ps);
+    		//execute query
             ps.executeUpdate();
-            
+            //close connection
             con.close();
     	}
     	catch (Exception e) {

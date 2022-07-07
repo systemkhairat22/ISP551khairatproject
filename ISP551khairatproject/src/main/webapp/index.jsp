@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-	
+	<h1>ABID</h1>
     <div style=" background-color: #043a9f; height:100px; color:blue; padding-left:70px; ">
         <h1 style="text-align: center; color: rgb(2, 2, 2);">Welcome to Khairat System</h1>
     </div>

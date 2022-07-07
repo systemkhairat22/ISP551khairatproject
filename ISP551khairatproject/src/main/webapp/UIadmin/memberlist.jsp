@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,5 +40,39 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
         <script src="main.js"></script>
         
+        <table border="1">
+			<tr>
+				<th>Member ID</th>
+				<th> Name</th>
+				<th> IC Number</th>
+				<th> Email </th>
+				<th> Age</th>
+				<th> Address</th>
+				<th>Phone Number</th>
+				<th>Representative Name</th>
+				<th>Representative Number</th>
+				<th>Password</th>
+				<th colspan="10">Action</th>
+			</tr>
+			<c:forEach items ="${member}" var="m" varStatus="member">
+			<tr>
+				<td><c:out value="${m.memberid}" /></td>
+				<td><c:out value="${m.mem_name}" /></td>
+				<td><c:out value="${m.mem_icnum}" /></td>
+				
+				<td><c:out value="${m.mem_email}" /></td>
+				<td><c:out value="${m.mem_age}" /></td>
+				<td><c:out value="${m.mem_address}" /></td>
+				<td><c:out value="${m.mem_phonenum}" /></td>
+				<td><c:out value="${m.mem_repname}" /></td>
+			    <td><c:out value="${m.repnum}" /></td>
+			    <td><c:out value="${m.password}" /></td>
+							
+				<td><a class="btn btn-primary" href="viewmembercontroller?memberid=<c:out value="${m.memberid}"/>">View</a></td>
+				<td><a class="btn btn-primary" href="deletemembercontroller?memberid=<c:out value="${m.memberid}"/>">Delete</a></td>
+				
+			</tr>
+			</c:forEach>
+		</table>
 </body>
 </html>

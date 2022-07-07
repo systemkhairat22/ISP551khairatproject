@@ -8,12 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import hostelmanagement.model.CollegeApplication;
 import khairat.model.ApplicationClaim;
 import khairatDB.ConnectionManager;
 import user.model.Admin;
 import user.model.Member;
-import user.model.Student;
 
 import static java.lang.System.out;
 
@@ -179,9 +177,9 @@ public class AdminDAO {
     		//CONNECT TO DB
     		con = ConnectionManager.getConnection();
     		//CREATE STATEMENT
-    		PreparedStatement ps = con.prepareStatement("SELECT * FROM member WHERE memberid=?");
+    		ps = con.prepareStatement("SELECT * FROM member WHERE memberid=?");
     		//EXECUTE QUERY
-    		ResultSet rs = ps.executeQuery();
+    		rs = ps.executeQuery();
     		
     		while(rs.next()) {
     			Member mem = new Member();

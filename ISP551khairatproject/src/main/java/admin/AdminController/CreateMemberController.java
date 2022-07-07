@@ -12,28 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import admin.AdminDAO.AdminDAO;
 import user.model.Member;
 
-
-/**
- * Servlet implementation class CreateMemberController
- */
 @WebServlet("/CreateMemberController")
 public class CreateMemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AdminDAO dao;
-    /**
-     * Default constructor. 
-     */
+    
     public CreateMemberController() {
     	super();
     	dao = new AdminDAO();
-        // TODO Auto-generated constructor stub
     }
-    
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		RequestDispatcher view = request.getRequestDispatcher("createmember.jsp");
-		view.forward(request, response);
-	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Member member = new Member();

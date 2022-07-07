@@ -24,21 +24,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/EclipseDeveloperTool/javax.servlet.jsp.jstl-1.2.5.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/EclipseDeveloperTool/javax.servlet.jsp.jstl-api-1.2.2.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/EclipseDeveloperTool/jstl.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files/EclipsedevTools/servlet/servlet-api.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -50,6 +35,21 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/mysql-connector-java-5.1.42-bin/mysql-connector-java-8.0.29.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files/EclipsedevTools/jstl/jstl.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files/EclipsedevTools/jstl/jstl-impl.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files/EclipsedevTools/jstl/jstl-standard.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

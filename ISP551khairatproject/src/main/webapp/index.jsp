@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-	<h1>ABID ZIKRY</h1>
+	
     <div style=" background-color: #043a9f; height:100px; color:blue; padding-left:70px; ">
         <h1 style="text-align: center; color: rgb(2, 2, 2);">Welcome to Khairat System</h1>
     </div>
@@ -24,7 +24,7 @@
         <p>3,2017 to make a capacity even larger about 5,000 people.The mosque became a</p>
         <p>center of worship for the community in Gelang Patah,Johor.</p>
         <a href="login.jsp"><button class="button-left" >LOGIN</button></a>
-        <P>System Creator</P>
+        
 	</div>
 
   
